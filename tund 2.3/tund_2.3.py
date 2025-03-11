@@ -5,8 +5,8 @@ kmi_küsimus=input(f"{nimi}! Kas leian Sinu keha indeksi? 0-ei, 1-jah=> ")
 if kmi_küsimus=="1":
     pikkus=int(input("Palun sisesta oma pikkus sentimeetrites: "))
     mass=float(input("Palun sisesta oma kehakaal kilogrammides: "))
-    pikkus_metes=pikkus/100
-    kmi=mass/(pikkus_metes**2)
+    pikkusm=pikkus/100
+    kmi=mass/(pikkusm**2)
     print(f"{nimi}! Sinu keha indeks on:{kmi:.1f}")
     if kmi<16:
         hinnang="Tervisele ohtlik alakaal"
