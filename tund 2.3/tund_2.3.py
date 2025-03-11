@@ -1,29 +1,32 @@
-print("Tere! Olen sinu uus sõber - Deniss!")
-nimi=input("Palun sisesta oma nimi: ")
+print("Tere! Olen sinu uus sõber - KMI!")
+nimi=input("Sisesta oma nimi: ")
 print(f"{nimi}, oi kui ilus nimi!")
-kmi_küsimus=input(f"{nimi}! Kas leian Sinu keha indeksi? 0-ei, 1-jah=> ")
-if kmi_küsimus=="1":
-    pikkus=int(input("Palun sisesta oma pikkus sentimeetrites: "))
-    mass=float(input("Palun sisesta oma kehakaal kilogrammides: "))
-    pikkusm=pikkus/100
-    kmi=mass/(pikkusm**2)
-    print(f"{nimi}! Sinu keha indeks on:{kmi:.1f}")
-    if kmi<16:
-        hinnang="Tervisele ohtlik alakaal"
-    elif 16<=kmi<19:
-        hinnang="Alakaal"
-    elif 20<=kmi<25:
-        hinnang="Normaalkaal"
-    elif 26<=kmi< 30:
-        hinnang="Ülekaal"
-    elif 31<=kmi<35:
-        hinnang="Rasvumine"
-    elif 36<=kmi<40:
-        hinnang="Tugev rasvumine"
+kmi_soov=input(f"{nimi}! Kas leian Sinu keha indeksi? 0-ei, 1-jah => ")
+try:
+    kmi_soov=int(kmi_soov)
+    if kmi_soov==1:
+        pikkus=int(input("Sisesta oma pikkus sentimeetrites: "))
+        mass=float(input("Sisesta oma kehakaal kilogrammides: "))
+        kmi=mass/((pikkus/100)**2)
+        print(f"{nimi}! Sinu keha indeks on: {kmi:.1f})
+        if kmi<16:
+            print("Tervisele ohtlik alakaal")
+        elif 16<=kmi<19:
+            print("Alakaal")
+        elif 19<=kmi<25:
+            print("Normaalkaal")
+        elif 25<=kmi<30:
+            print("Ülekaal")
+        elif 30<=kmi<35:
+            print("Rasvumine")
+        elif 35<=kmi<40:
+            print("Tugev rasvumine")
+        else:
+            print("Tervisele ohtlik rasvumine")
+    elif kmi_soov==0:
+        print("Kahju! See on väga kasulik info!")
     else:
-        hinnang="Tervisele ohtlik rasvumine"
-    print(f"Hinnang: {hinnang}")
-else:
-    print("Kahju! See on väga kasulik info!")
-    print()
-print(f"Kohtumiseni,{nimi}! Igavesti Sinu, Python!")
+        print("Palun sisesta kehtiv valik (0 või 1).")
+except:
+    print("Vigane sisend! Palun sisesta kehtivad numbrid.")
+print(f"Kohtumiseni, {nimi}! Igavesti Sinu, KMI!")
