@@ -8,7 +8,7 @@ try:
         pikkus=int(input("Sisesta oma pikkus sentimeetrites: "))
         mass=float(input("Sisesta oma kehakaal kilogrammides: "))
         kmi=mass/((pikkus/100)**2)
-        print(f"{nimi}! Sinu keha indeks on: {kmi:.1f})
+        print(f"{nimi}! Sinu keha indeks on: {kmi:.1f}")
         if kmi<16:
             print("Tervisele ohtlik alakaal")
         elif 16<=kmi<19:
